@@ -3,7 +3,7 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-DROP DATABASE if exsists gym_manage;
+DROP DATABASE if exists gym_manage;
 CREATE DATABASE gym_manage;
 
 USE gym_manage;
@@ -94,6 +94,102 @@ CREATE TABLE `equipment` (
 	`start_date` DATE
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/* some data for the 'equipment' table */
+
+-- LifeFitness T5
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1833, 28, 1120, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1834, 39, 1560, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1835, 45, 1800, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1836, 53, 2120, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1837, 65, 2600, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1838, 66, 2640, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1839, 34, 1360, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1840, 43, 1720, 'LifeFitness T5', 'Treadmill', '1/6/20');
+
+-- LifeFitness Integrity
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2140, 28, 1120, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2132, 30, 1200, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2155, 43, 1720, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2177, 33, 1320, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2111, 47, 1880, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2134, 50, 2000, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2165, 68, 2720, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2176, 32, 1280, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2166, 43, 1720, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2144, 54, 2160, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+
+
+
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (1832, 23, 920, 'LifeFitness T5', 'Treadmill', '1/6/20');
+
 
 -- --------------------------------------------------------
 
