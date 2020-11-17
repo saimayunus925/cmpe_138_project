@@ -139,6 +139,10 @@ VALUES (2166, 43, 1720, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
 INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
 VALUES (2144, 54, 2160, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
 
+-- LifeFitness Activate
+
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2440, 34, 1360, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
 
 -- --------------------------------------------------------
 
