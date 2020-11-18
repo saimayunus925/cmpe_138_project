@@ -142,7 +142,16 @@ VALUES (2144, 54, 2160, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
 -- LifeFitness Activate
 
 INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
-VALUES (2440, 34, 1360, 'LifeFitness Integrity', 'Elliptical', '1/6/20');
+VALUES (2440, 34, 1360, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2454, 34, 1320, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2455, 34, 1240, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2456, 34, 1080, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2457, 34, 1040, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2458, 34, 1320, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2459, 34, 1040, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2460, 34, 1360, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2461, 34, 1280, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
+VALUES (2462, 34, 840, 'LifeFitness Activate', 'Exercise Bike', '1/9/20');
 
 -- --------------------------------------------------------
 
