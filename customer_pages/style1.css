@@ -1,0 +1,22 @@
+
+/* CSS styling for customer pages */
+
+body {
+    background-color: #d5f9de;
+}
+
+nav {
+    background-color: #049A8F;
+}
+
+.navbar a:link {
+    font-size: 20px;
+    font-weight: 800;
+    color: #02473A;
+}
+
+.navbar a:visited {
+    font-size: 20px;
+    font-weight: 800;
+    color: #011502;
+}
