@@ -33,12 +33,45 @@ USE gym_manage;
 --
 
 CREATE TABLE `member` (
-  `user_id` INT NOT NULL,
-  `password` INTEGER NOT NULL,
-  `attendance` CHAR (1),
-  `user_cost` INTEGER
-
+  `user_id` int(4) NOT NULL,
+  `mem_password` varchar(100) NOT NULL,
+  `attendance` int(11) NOT NULL,
+  `user_cost` double NOT NULL,
+  `mem_lvl` varchar(100) NOT NULL,
+  `level_num` char(1) NOT NULL,
+  `mem_lname` varchar(100) NOT NULL,
+  `mem_fname` varchar(100) NOT NULL,
+  `mem_dob` varchar(100) NOT NULL,
+  `mem_status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/* some data for the 'member' table */
+INSERT INTO `member` (`user_id`, `mem_password`, `attendance`, `user_cost`, `mem_lvl`, `level_num`,
+`mem_lname`, `mem_fname`, `mem_dob`, `mem_status`)
+VALUES (5484, 'longjohnson23', 80, 164, 'Gold', '2', 'Johnson', 'Xavier', '3/25/86', 1),
+(8457, 'durhammy3', 27, 95.1, 'Gold', '2', 'Durham', 'Alison', '2/28/97', 0),
+(2535, 'heresjohnny1234', 66, 175.8, 'Platinum', 3, 'Vang',  'Johnny', '1/9/75', 1),
+/*
+(3655, 'mikesavage21', 89, 145.7, 'Bronze', 1, 'Savid', 'Michael', 
+),
+(7766
+),
+(3534
+),
+(8643
+),
+(5463
+),
+(9987
+),
+(3212
+),
+(4223
+),
+(4208
+);
+*/
+
 
 --
 -- Dumping data for table `admin_info`
