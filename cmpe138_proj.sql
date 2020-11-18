@@ -153,6 +153,20 @@ VALUES (2460, 34, 1360, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
 VALUES (2461, 34, 1280, 'LifeFitness Activate', 'Exercise Bike', '1/9/20'),
 VALUES (2462, 34, 840, 'LifeFitness Activate', 'Exercise Bike', '1/9/20');
 
+-- LifeFitness Powermill
+
+INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
+VALUES (2755, 55, 2200, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 54, 2160, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 53, 2120, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 56, 2240, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 57, 2280, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 60, 2400, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 63, 2520, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 54, 2160, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 52, 2080, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2755, 48, 1920, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20');
+
 -- --------------------------------------------------------
 
 --
