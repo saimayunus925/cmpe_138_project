@@ -6,17 +6,26 @@ body {
 }
 
 nav {
-    background-color: #049A8F;
+    background-color: #6DCAB7;
 }
 
 .navbar a:link {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
     color: #02473A;
 }
 
 .navbar a:visited {
     font-size: 20px;
-    font-weight: 800;
-    color: #011502;
+    font-weight: 700;
+    color: #037971;
 }
+
+input[type=text] {
+    background-color: #C3E9E2;
+}
+
+input[type=password] {
+    background-color: #C3E9E2;
+}
+
