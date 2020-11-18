@@ -48,29 +48,18 @@ CREATE TABLE `member` (
 /* some data for the 'member' table */
 INSERT INTO `member` (`user_id`, `mem_password`, `attendance`, `user_cost`, `mem_lvl`, `level_num`,
 `mem_lname`, `mem_fname`, `mem_dob`, `mem_status`)
-VALUES (5484, 'longjohnson23', 80, 164, 'Gold', '2', 'Johnson', 'Xavier', '3/25/86', 1),
-(8457, 'durhammy3', 27, 95.1, 'Gold', '2', 'Durham', 'Alison', '2/28/97', 0),
-(2535, 'heresjohnny1234', 66, 175.8, 'Platinum', 3, 'Vang',  'Johnny', '1/9/75', 1),
-/*
-(3655, 'mikesavage21', 89, 145.7, 'Bronze', 1, 'Savid', 'Michael', 
-),
-(7766
-),
-(3534
-),
-(8643
-),
-(5463
-),
-(9987
-),
-(3212
-),
-(4223
-),
-(4208
-);
-*/
+VALUES (5484, 'longjohnson23', 22, 88.6, 'Gold', '2', 'Johnson', 'Xavier', '2/8/96', 1),
+(8457, 'durhammy3', 11, 74.3, 'Gold', '2', 'Durham', 'Alison', '7/17/71', 0),
+(2535, 'heresjohnny1234', 96, 214.8, 'Platinum', '3', 'Vang',  'Johnny', '3/4/75', 1),
+(3655, 'mikesavage21', 28, 66.4, 'Bronze', '1', 'Savid', 'Michael', '2/6/85', 1),
+(7766, 'hutcharide453', 44, 87.2, 'Bronze', '1', 'Hutchinson', 'Jim', '6/5/96', 0),
+(3534, 'millarlite69', 3, 63.9, 'Gold', '2', 'Millar', 'Steven', '12/29/83', 0),
+(8643, 'password1234', 37, 138.1, 'Platinum', '3', 'Benson', 'Mark', '9/25/87', 0),
+(5463, 'redissuz23', 25, 92.5, 'Gold', '2', 'Lang', 'Suzy', '8/9/95', 1),
+(9987, 'Vendetta9', 37, 108.1, 'Gold', '2', 'Chung', 'Vince', '4/11/01', 1),
+(3212, 'notanABG12', 30, 69, 'Bronze', '1', 'Nguyen', 'Emily', '1/31/72', 1),
+(4223, 'Jordan2345', 25, 62.5, 'Bronze', '1', 'Vance', 'Jordan', '7/8/82', 0),
+(4208, 'IDriveLexus', 75, 187.5, 'Platinum', '3', 'Nguyen', 'Kevin', '9/16/01', 0);
 
 
 --
