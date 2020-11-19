@@ -94,11 +94,26 @@ CREATE TABLE `gym_facility` (
 --
 
 CREATE TABLE `employee` (
-  `e_id` INTEGER NOT NULL,
-	`mng_id` INTEGER NOT NULL,
-	`branch_id` INTEGER NOT NULL
-
+  `e_id` int(4) NOT NULL,
+  `emp_password` varchar(100) NOT NULL,
+  `emp_lname` varchar(100) NOT NULL,
+  `emp_fname` varchar(100) NOT NULL,
+  `mng_id` int(11) NOT NULL,
+  `emp_position` varchar(100) NOT NULL,
+  `emp_phone` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/* some data for the 'employee' table */
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (2095, 'dr4ke', 'Velarde', 'Arian Joy', 1999, 'Manager', '8943318188'),
+VALUES (1652, 'k4ny3west', 'Yunus', 'Saima', 2000, 'Manager', '9558258297'),
+VALUES (7440, 'b1gsean', 'Eappen', 'Brian', NULL, 'Trainer', '3953396331'),
+VALUES (2241, 'g-eazy', 'Kaur', 'Aman', NULL, 'Mechanic', '4633066745'),
+VALUES (3777, 'juicewrld999', 'Na', 'Elizabeth', NULL, 'Front Desk', '7673558856'),
+VALUES (2531, 'lilwayne666', 'Douglas', 'Frederick', NULL, 'Custodian', '9234657975'),
+VALUES (1811, 'kobe0824', 'Durham', 'Linda', NULL, 'Front Desk', '5386901638'),
+VALUES (5291, 'notJCole2014', 'Cole', 'Jermaine', NULL, 'Trainer', '1147332468'),
+VALUES (1403, 'whatspoopin', 'Harlow', 'Jack', NULL, 'Custodian', '3758208417');
 
 -- --------------------------------------------------------
 
