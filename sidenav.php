@@ -63,8 +63,8 @@
               <p>Machine List</p>
             </a>
           </li> -->
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="manageuser.php">
+          <li class="nav-item ">
+            <a class="nav-link" href="managemem.php">
               <i class="material-icons">edit_user</i>
               <p>Manage Member</p>
             </a>
@@ -74,7 +74,7 @@
               <i class="material-icons">edit_user</i>
               <p>Manage Employee</p>
             </a>
-          </li> -->
+          </li> 
           <li class="nav-item">
             <a class="nav-link" href="machinelist.php">
               <i class="material-icons">edit_user</i>
