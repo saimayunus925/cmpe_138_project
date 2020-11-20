@@ -10,10 +10,10 @@ include("../db.php");
 error_reporting(0);
 if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
-$e_id=$_GET['e_id'];
+$mach_id=$_GET['mach_id'];
 
 /*this is delet query*/
-mysqli_query($con,"delete from employee where e_id='$e_id'")or die("query is incorrect...");
+mysqli_query($con,"delete from equipment where mach_id='$mach_id'")or die("query is incorrect...");
 }
 
 ///pagination
@@ -39,29 +39,30 @@ include "topheader.php";
          <div class="col-md-14">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title"> Employee List</h4>
+                <h4 class="card-title"> Machine List</h4>
 
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
                   <table class="table tablesorter " id="page1">
                     <thead class=" text-primary">
-                      <tr><th>Employee ID</th><th>User Name</th><th>Password</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Position</th><th>
+                      <tr><th>Machine ID</th><th>Name</th><th>Type</th><th>Total time</th><th>Total count</th><th>Start date</th><th>Status</th><th>
 	<a class=" btn btn-primary" href="addproduct.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
 
-                        $result=mysqli_query($con,"select e_id,emp_username, emp_password,emp_fname,emp_lname,emp_phone,emp_position from employee Limit $page1,12")or die ("query 1 incorrect.....");
+                        $result=mysqli_query($con,"select mach_id,mach_name,mach_type,use_time,use_count,start_date,mach_status from equipment Limit $page1,12")or die ("query 1 incorrect.....");
 
-                        while(list($e_id,$emp_username,$emp_password,$emp_fname,$emp_lname,$emp_phone,$emp_position)=mysqli_fetch_array($result))
+                        while(list($mach_id,$mach_name,$mach_type,$use_time,$use_count,$start_date,$mach_status)=mysqli_fetch_array($result))
                         {
-                        echo "<tr><td>$e_id</td><td>$emp_username</td><td>$emp_password</td><td>$emp_fname</td><td>$emp_lname</td><td>$emp_phone</td><td>$emp_position</td>
+                        echo "<tr><td>$mach_id</td><td>$mach_name</td><td>$mach_type</td><td>$use_time</td><td>$use_count</td><td>$start_date</td>
+                        <td>$mach_status</td>
                         <td>
 
-                        <a href='editemp.php?e_id=$e_id' type='button' rel='tooltip' title='' class='btn btn-info btn-link btn-sm' data-original-title='Edit Employee'>
+                        <a href='editmach.php?mach_id=$mach_id' type='button' rel='tooltip' title='' class='btn btn-info btn-link btn-sm' data-original-title='Edit Machine'>
                                 <i class='material-icons'>edit</i>
                               <div class='ripple-container'></div></a>
-                        <a href='manageemp.php?e_id=$e_id&action=delete' type='button' rel='tooltip' title='' class='btn btn-danger btn-link btn-sm' data-original-title='Delete Employee'>
+                        <a href='machinelist.php?mach_id=$mach_id&action=delete' type='button' rel='tooltip' title='' class='btn btn-danger btn-link btn-sm' data-original-title='Delete Machine'>
                                 <i class='material-icons'>close</i>
                               <div class='ripple-container'></div></a>
                         </td></tr>";
@@ -84,7 +85,7 @@ include "topheader.php";
                  <?php
 //counting paging
 
-                $paging=mysqli_query($con,"select e_id,emp_username, emp_password,emp_fname,emp_lname,emp_phone,emp_position from employee");
+                $paging=mysqli_query($con,"select mach_id,mach_name,mach_type,use_time,use_count,start_date,mach_status from equipment");
                 $count=mysqli_num_rows($paging);
 
                 $a=$count/10;
