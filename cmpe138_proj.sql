@@ -46,6 +46,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* some data for the 'member' table */
+USE gym_manage;
 INSERT INTO `member` (`user_id`, `mem_password`, `attendance`, `user_cost`, `mem_lvl`, `level_num`,
 `mem_lname`, `mem_fname`, `mem_dob`, `mem_status`)
 VALUES (5484, 'longjohnson23', 22, 88.6, 'Gold', '2', 'Johnson', 'Xavier', '2/8/96', 1),
@@ -92,7 +93,7 @@ CREATE TABLE `gym_facility` (
 --
 -- Table structure for table `employee`
 --
-
+USE gym_manage;
 CREATE TABLE `employee` (
   `e_id` int(4) NOT NULL,
   `emp_password` varchar(100) NOT NULL,
@@ -120,10 +121,10 @@ VALUES (1403, 'whatspoopin', 'Harlow', 'Jack', NULL, 'Custodian', '3758208417');
 --
 -- Table structure for table `equipment`
 --
-
+USE gym_manage;
 CREATE TABLE `equipment` (
   `mach_id` INTEGER NOT NULL,
-  `b_id` INTEGER NOT NULL
+  `b_id` INTEGER NOT NULL,
   `use_count` INTEGER NOT NULL,
 	`use_time` INTEGER,
 	`mach_name` VARCHAR (255),
@@ -194,15 +195,15 @@ VALUES (2462, 34, 840, 'LifeFitness Activate', 'Exercise Bike', '1/9/20');
 
 INSERT INTO `equipment` (mach_id, use_count, use_time, mach_name, mach_type, start_date) 
 VALUES (2755, 55, 2200, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 54, 2160, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 53, 2120, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 56, 2240, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 57, 2280, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 60, 2400, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 63, 2520, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 54, 2160, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 52, 2080, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
-VALUES (2755, 48, 1920, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20');
+VALUES (2756, 54, 2160, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2757, 53, 2120, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2758, 56, 2240, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2759, 57, 2280, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2760, 60, 2400, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2761, 63, 2520, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2762, 54, 2160, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2763, 52, 2080, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20'),
+VALUES (2764, 48, 1920, 'LifeFitness Powermill', 'Stair Stepper', '1/9/20');
 
 -- --------------------------------------------------------
 
