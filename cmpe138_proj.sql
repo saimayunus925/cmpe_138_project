@@ -46,7 +46,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* some data for the 'member' table */
-USE gym_manage;
+
 INSERT INTO `member` (`user_id`, `mem_password`, `attendance`, `user_cost`, `mem_lvl`, `level_num`,
 `mem_lname`, `mem_fname`, `mem_dob`, `mem_status`)
 VALUES (5484, 'longjohnson23', 22, 88.6, 'Gold', '2', 'Johnson', 'Xavier', '2/8/96', 1),
@@ -93,7 +93,7 @@ CREATE TABLE `gym_facility` (
 --
 -- Table structure for table `employee`
 --
-USE gym_manage;
+
 CREATE TABLE `employee` (
   `e_id` int(4) NOT NULL,
   `emp_password` varchar(100) NOT NULL,
@@ -121,7 +121,7 @@ VALUES (1403, 'whatspoopin', 'Harlow', 'Jack', NULL, 'Custodian', '3758208417');
 --
 -- Table structure for table `equipment`
 --
-USE gym_manage;
+
 CREATE TABLE `equipment` (
   `mach_id` INTEGER NOT NULL,
   `b_id` INTEGER NOT NULL,
