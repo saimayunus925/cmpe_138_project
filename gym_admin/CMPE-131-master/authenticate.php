@@ -19,24 +19,24 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 }
 
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
-if ($stmt = $con->prepare('SELECT admin_id, admin_password FROM admin_info WHERE admin_name = ?')) {
+if ($stmt = $con->prepare('SELECT e_id, emp_password FROM employee WHERE emp_username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
 	// Store the result so we can check if the account exists in the database.
 	$stmt->store_result();
 if ($stmt->num_rows > 0) {
-	$stmt->bind_result($admin_id, $admin_password);
+	$stmt->bind_result($e_id, $emp_password);
 	$stmt->fetch();
 	// Account exists, now we verify the password.
 	// Note: remember to use password_hash in your registration file to store the hashed passwords.
-	if ($_POST['password'] === $admin_password) {
+	if ($_POST['password'] === $emp_password) {
 		// Verification success! User has loggedin!
 		// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
 		session_regenerate_id();
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
-		$_SESSION['id'] = $admin_id;
+		$_SESSION['id'] = $e_id;
 		header("Location: admin/index.php"); // Redirecting To Home Page
 	} else {
 		echo "<script>

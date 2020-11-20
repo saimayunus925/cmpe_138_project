@@ -3,9 +3,9 @@ class Search{
     private $host     = "localhost";
     private $username = "root";
     private $password = "";
-    private $database     = "ecommerece";    
+    private $database     = "gym_manage";    
     public function __construct(){
-        if(!isset($this->db)){           
+        if(!isset($this->db)){
             $conn = new mysqli($this->host, $this->username, $this->password, $this->database);
             if($conn->connect_error){
                 die("Failed to connect with MySQL: " . $conn->connect_error);
@@ -26,7 +26,7 @@ class Search{
                 $sqlQuery .= $pre.$key." = '".$value."'";
                 $i++;
             }
-        }        
+        }
         if(array_key_exists("search",$sqlQueryConditions)){
             $sqlQuery .= (strpos($sqlQuery, 'WHERE') !== false)?' AND (':' WHERE (';
             $i = 0;
@@ -36,16 +36,16 @@ class Search{
                 $i++;
             }
 			$sqlQuery .= ")";
-        }        
-        if(array_key_exists("order_by",$sqlQueryConditions)){
-            $sqlQuery .= ' ORDER BY '.$sqlQueryConditions['order_by']; 
-        }        
-        if(array_key_exists("start",$sqlQueryConditions) && array_key_exists("limit",$sqlQueryConditions)){
-            $sqlQuery .= ' LIMIT '.$sqlQueryConditions['start'].','.$sqlQueryConditions['limit']; 
-        }elseif(!array_key_exists("start",$sqlQueryConditions) && array_key_exists("limit",$sqlQueryConditions)){
-            $sqlQuery .= ' LIMIT '.$sqlQueryConditions['limit']; 
         }
-		$searchResult = $this->db->query($sqlQuery);       
+        if(array_key_exists("order_by",$sqlQueryConditions)){
+            $sqlQuery .= ' ORDER BY '.$sqlQueryConditions['order_by'];
+        }
+        if(array_key_exists("start",$sqlQueryConditions) && array_key_exists("limit",$sqlQueryConditions)){
+            $sqlQuery .= ' LIMIT '.$sqlQueryConditions['start'].','.$sqlQueryConditions['limit'];
+        }elseif(!array_key_exists("start",$sqlQueryConditions) && array_key_exists("limit",$sqlQueryConditions)){
+            $sqlQuery .= ' LIMIT '.$sqlQueryConditions['limit'];
+        }
+		$searchResult = $this->db->query($sqlQuery);
         if(array_key_exists("return_type",$sqlQueryConditions) && $sqlQueryConditions['return_type'] != 'all'){
             switch($sqlQueryConditions['return_type']){
                 case 'count':

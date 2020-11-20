@@ -6,7 +6,7 @@
             &copy;
             <script>
               document.write(new Date().getFullYear())
-            </script>CMPE 138 GROUP 5
+            </script>CMPE 138 GROUP 8
           </div>
           <!-- your footer here -->
         </div>

@@ -31,7 +31,7 @@ mysqli_close($con);
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Add Employee</h4>
-                  <p class="card-category">Complete User profile</p>
+                  <p class="card-category">Complete Employee Profile</p>
                 </div>
                 <div class="card-body">
                   <form action="" method="post" name="form" enctype="multipart/form-data">

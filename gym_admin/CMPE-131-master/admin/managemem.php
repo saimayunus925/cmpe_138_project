@@ -10,10 +10,10 @@ include("../db.php");
 error_reporting(0);
 if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
-$e_id=$_GET['e_id'];
+$mem_id=$_GET['mem_id'];
 
 /*this is delet query*/
-mysqli_query($con,"delete from employee where e_id='$e_id'")or die("query is incorrect...");
+mysqli_query($con,"delete from member where mem_id='$mem_id'")or die("query is incorrect...");
 }
 
 ///pagination
@@ -39,29 +39,30 @@ include "topheader.php";
          <div class="col-md-14">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title"> Employee List</h4>
+                <h4 class="card-title"> Member List</h4>
 
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
                   <table class="table tablesorter " id="page1">
                     <thead class=" text-primary">
-                      <tr><th>Employee ID</th><th>User Name</th><th>Password</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Position</th><th>
+                      <tr><th>Member ID</th><th>First Name</th><th>Last Name</th><th>Attendance</th><th>User Cost</th><th>Date of Birth</th><th>Member Level</th><th>Status</th><th>
 	<a class=" btn btn-primary" href="addproduct.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
 
-                        $result=mysqli_query($con,"select e_id,emp_username, emp_password,emp_fname,emp_lname,emp_phone,emp_position from employee Limit $page1,12")or die ("query 1 incorrect.....");
+                        $result=mysqli_query($con,"select mem_id,mem_fname,mem_lname,attendance,user_cost,mem_dob,mem_lvl,mem_status from member Limit $page1,12")or die ("query 1 incorrect.....");
 
-                        while(list($e_id,$emp_username,$emp_password,$emp_fname,$emp_lname,$emp_phone,$emp_position)=mysqli_fetch_array($result))
+                        while(list($mem_id,$mem_fname,$mem_lname,$attendance,$user_cost,$mem_dob,$mem_lvl,$mem_status)=mysqli_fetch_array($result))
                         {
-                        echo "<tr><td>$e_id</td><td>$emp_username</td><td>$emp_password</td><td>$emp_fname</td><td>$emp_lname</td><td>$emp_phone</td><td>$emp_position</td>
+                        echo "<tr><td>$mem_id</td><td>$mem_fname</td><td>$mem_lname</td><td>$attendance</td><td>$user_cost</td><td>$mem_dob</td><td>$mem_lvl</td>
+                        <td>$mem_status</td>
                         <td>
 
-                        <a href='editemp.php?e_id=$e_id' type='button' rel='tooltip' title='' class='btn btn-info btn-link btn-sm' data-original-title='Edit Employee'>
+                        <a href='editmem.php?mem_id=$mem_id' type='button' rel='tooltip' title='' class='btn btn-info btn-link btn-sm' data-original-title='Edit Member'>
                                 <i class='material-icons'>edit</i>
                               <div class='ripple-container'></div></a>
-                        <a href='manageemp.php?e_id=$e_id&action=delete' type='button' rel='tooltip' title='' class='btn btn-danger btn-link btn-sm' data-original-title='Delete Employee'>
+                        <a href='managemem.php?mem_id=$mem_id&action=delete' type='button' rel='tooltip' title='' class='btn btn-danger btn-link btn-sm' data-original-title='Delete Member'>
                                 <i class='material-icons'>close</i>
                               <div class='ripple-container'></div></a>
                         </td></tr>";
@@ -84,7 +85,7 @@ include "topheader.php";
                  <?php
 //counting paging
 
-                $paging=mysqli_query($con,"select e_id,emp_username, emp_password,emp_fname,emp_lname,emp_phone,emp_position from employee");
+                $paging=mysqli_query($con,"select mem_id,mem_fname,mem_lname,attendance,user_cost,mem_dob,mem_lvl,mem_status from member");
                 $count=mysqli_num_rows($paging);
 
                 $a=$count/10;
@@ -93,7 +94,7 @@ include "topheader.php";
                 for($b=1; $b<=$a;$b++)
                 {
                 ?>
-                <li class="page-item"><a class="page-link" href="machinelist.php?page=<?php echo $b;?>"><?php echo $b." ";?></a></li>
+                <li class="page-item"><a class="page-link" href="managemem.php?page=<?php echo $b;?>"><?php echo $b." ";?></a></li>
                 <?php
 }
 ?>

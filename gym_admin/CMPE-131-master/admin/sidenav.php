@@ -34,13 +34,13 @@
       <div class="sidebar-wrapper ps-container ps-theme-default" data-ps-id="3a8db1f4-24d8-4dbf-85c9-4f5215c1b29a">
         <ul class="nav">
           <li class="nav-item active">
-            <a class="nav-link" href="orders.php">
+            <a class="nav-link" href="members.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="adduser.php">
+            <a class="nav-link" href="addmember.php">
               <i class="material-icons">person</i>
               <p>Add Member</p>
             </a>
@@ -51,34 +51,33 @@
               <p>Add Employee</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="electroniclist.php">
-              <i class="material-icons">list</i>
-              <p>Machine List</p>
-            </a>
-
-          </li>
           <li class="nav-item ">
             <a class="nav-link" href="addproduct.php">
               <i class="material-icons">add</i>
               <p>Add Machines</p>
             </a>
           </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="electroniclist2.php">
+              <i class="material-icons">list</i>
+              <p>Machine List</p>
+            </a>
+          </li> -->
           <li class="nav-item ">
-            <a class="nav-link" href="manageuser.php">
-              <i class="material-icons">edit_user</i>
+            <a class="nav-link" href="managemem.php">
+              <i class="material-icons">list</i>
               <p>Manage Member</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="manageemp.php">
-              <i class="material-icons">edit_user</i>
+              <i class="material-icons">list</i>
               <p>Manage Employee</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="productlist.php">
-              <i class="material-icons">edit_user</i>
+            <a class="nav-link" href="machinelist.php">
+              <i class="material-icons">list</i>
               <p>Manage Machines</p>
             </a>
           </li>
