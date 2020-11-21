@@ -47,7 +47,7 @@ include "topheader.php";
                   <table class="table tablesorter " id="page1">
                     <thead class=" text-primary">
                       <tr><th>Machine ID</th><th>Name</th><th>Type</th><th>Total time</th><th>Total count</th><th>Start date</th><th>Status</th><th>
-	<a class=" btn btn-primary" href="addproduct.php">Add New</a></th></tr></thead>
+	<a class=" btn btn-primary" href="addmachine.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
 
