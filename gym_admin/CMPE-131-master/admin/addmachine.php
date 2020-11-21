@@ -28,8 +28,7 @@ mysqli_close($con);
 $mach_id = rand(1000,9999);
 $use_time = 0; 
 $use_count = 0; 
-$mach_status = 0; 
-$start_date = "8/09/09"
+$mach_status = 1; 
 
 ?>
       <!-- End Navbar -->
