@@ -1,136 +1,107 @@
- <?php
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: ../emp-login.php');
-	exit;
+  header('Location: ../emp-login.php');
+  exit;
 }
 include("../db.php");
-
-
+include "sidenav.php";
+include "topheader.php";
 if(isset($_POST['btn_save']))
 {
+$mach_id=$_POST['mach_id'];
 $mach_name=$_POST['mach_name'];
 $mach_type=$_POST['mach_type'];
 $use_time=$_POST['use_time'];
 $use_count=$_POST['use_count'];
-$start_dat=$_POST['start_date'];
+$start_date=$_POST['start_date'];
 $mach_status=$_POST['mach_status'];
 
-//picture coding
-$picture_name=$_FILES['picture']['name'];
-$picture_type=$_FILES['picture']['type'];
-$picture_tmp_name=$_FILES['picture']['tmp_name'];
-$picture_size=$_FILES['picture']['size'];
-
-if($picture_type=="image/jpeg" || $picture_type=="image/jpg" || $picture_type=="image/png" || $picture_type=="image/gif")
-{
-	if($picture_size<=50000000)
-
-		$pic_name=time()."_".$picture_name;
-		move_uploaded_file($picture_tmp_name,"../product_images/".$pic_name);
-
-mysqli_query($con,"insert into products (product_cat, product_brand,product_title,product_price, product_desc, product_image,product_keywords) values ('$product_type','$brand','$product_name','$price','$details','$pic_name','$tags')") or die ("query incorrect");
-
- header("location: sumit_form.php?success=1");
-}
-
+mysqli_query($con,"insert into equipment(mach_id, mach_name, mach_type,use_time,use_count,start_date,mach_status) values ('$mach_id','$mach_name','$mach_type','$use_time','$use_count','$start_date','$mach_status')")
+      or die ("Query 1 is inncorrect........");
+header("location: machinelist.php");
 mysqli_close($con);
 }
-include "sidenav.php";
-include "topheader.php";
+
+$mach_id = rand(1000,9999);
+$use_time = 0; 
+$use_count = 0; 
+$mach_status = 0; 
+$start_date = "8/09/09"
+
 ?>
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <form action="" method="post" type="form" name="form" enctype="multipart/form-data">
-          <div class="row">
-
-
-         <div class="col-md-7">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <h5 class="title">Add Product</h5>
-              </div>
-              <div class="card-body">
-
-                  <div class="row">
-
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Product Title</label>
-                        <input type="text" id="product_name" required name="product_name" class="form-control">
+          <!-- your content here -->
+          <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Add Machine</h4>
+                  <p class="card-category">Complete Machine Profile</p>
+                </div>
+                <div class="card-body">
+                  <form action="" method="post" name="form" enctype="multipart/form-data">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Machine Name</label>
+                          <input type="text" name="mach_name" id="mach_name" class="form-control" required>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="">
-                        <label for="">Add Image</label>
-                        <input type="file" name="picture" required class="btn btn-fill btn-success" id="picture" >
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Machine Type</label>
+                          <input type="text" id="mach_type" name="mach_type" class="form-control" required>
+                        </div>
                       </div>
-                    </div>
-                     <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Description</label>
-                        <textarea rows="4" cols="80" id="details" required name="details" class="form-control"></textarea>
-                      </div>
-                    </div>
-
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Pricing</label>
-                        <input type="text" id="price" name="price" required class="form-control" >
-                      </div>
-                    </div>
-                  </div>
-
-
-
-              </div>
-
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <h5 class="title">Categories</h5>
-              </div>
-              <div class="card-body">
-
-                  <div class="row">
-
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Product Category</label>
-                        <input type="text" id="product_type" name="product_type" required="[1-6]" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="">Product Brand</label>
-                        <input type="text" id="brand" name="brand" required class="form-control">
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Start Date</label>
+                          <input type="text" id="start_date" name="start_date" class="form-control" required>
+                        </div>
                       </div>
                     </div>
 
 
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Product Keywords</label>
-                        <input type="text" id="tags" name="tags" required class="form-control" >
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Use Count</label>
+                          <input type="text" name="use_count" id="use_count" style="color: white" value ="<?php echo "$use_count";?>"class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Use Time</label>
+                          <input type="text" name="use_time" id="use_time" style="color: white" value ="<?php echo "$use_time";?>"class="form-control" readonly>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-              </div>
-              <div class="card-footer">
-                  <button type="submit" id="btn_save" name="btn_save" required class="btn btn-fill btn-primary">Update Product</button>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Machine Status</label>
+                          <input type="text" name="mach_status" id="mach_status" style="color: white" value ="<?php echo "$mach_status";?>"class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Machine ID</label>
+                          <input type="text" name="mach_id" id="mach_id" style="color: white" value ="<?php echo "$mach_id";?>"class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Add Machine</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-
-        </div>
-         </form>
-
         </div>
       </div>
       <?php
