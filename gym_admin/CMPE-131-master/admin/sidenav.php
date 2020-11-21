@@ -36,10 +36,16 @@
           <li class="nav-item active">
             <a class="nav-link" href="members.php">
               <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <p>Member Status</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
+            <a class="nav-link" href="machines.php">
+              <i class="material-icons">dashboard</i>
+              <p>Mach Status</p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
             <a class="nav-link" href="addmember.php">
               <i class="material-icons">person</i>
               <p>Add Member</p>
@@ -56,22 +62,16 @@
               <i class="material-icons">add</i>
               <p>Add Machines</p>
             </a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="electroniclist2.php">
-              <i class="material-icons">list</i>
-              <p>Machine List</p>
-            </a>
           </li> -->
           <li class="nav-item ">
             <a class="nav-link" href="managemem.php">
-              <i class="material-icons">list</i>
+              <i class="material-icons">person</i>
               <p>Manage Member</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="manageemp.php">
-              <i class="material-icons">list</i>
+              <i class="material-icons">person</i>
               <p>Manage Employee</p>
             </a>
           </li>
