@@ -47,7 +47,7 @@ include "topheader.php";
                   <table class="table tablesorter " id="page1">
                     <thead class=" text-primary">
                       <tr><th>Employee ID</th><th>User Name</th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Position</th><th>
-	<a class=" btn btn-primary" href="addemp1.php">Add New</a></th></tr></thead>
+	<a class=" btn btn-primary" href="addemp.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
 
