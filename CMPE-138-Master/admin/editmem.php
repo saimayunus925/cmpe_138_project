@@ -1,7 +1,7 @@
- <?php
-// We need to use sessions, so you should always start sessions using the below code.
+ <!--SJSU CMPE 138 Fall 2020 TEAM8-->
+<?php
 session_start();
-// If the user is not logged in redirect to the login page...
+//If not logged in, go to login
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../emp-login.php');
 	exit;
@@ -9,20 +9,20 @@ if (!isset($_SESSION['loggedin'])) {
 include("../db.php");
 $mem_id=$_REQUEST['mem_id'];
 
-$result=mysqli_query($con,"select mem_id,mem_fname,mem_lname,mem_dob,mem_lvl,mem_status from member where mem_id='$mem_id'")or die ("query 1 incorrect.......");
+$result=mysqli_query($con,"select mem_id,mem_fname,mem_lname,mem_dob,mem_lvl,mem_status from member where mem_id='$mem_id'")or die ("Query 1 is incorrect");
 
 list($mem_id,$mem_fname,$mem_lname,$mem_dob,$mem_lvl,$mem_status)=mysqli_fetch_array($result);
 
 if(isset($_POST['btn_save']))
 {
-
 $mem_fname=$_POST['mem_fname'];
 $mem_lname=$_POST['mem_lname'];
 $mem_dob=$_POST['mem_dob'];
 $mem_lvl=$_POST['mem_lvl'];
 $mem_status=$_POST['mem_status'];
 
-mysqli_query($con,"update member set mem_fname='$mem_fname', mem_lname='$mem_lname',mem_dob='$mem_dob', mem_lvl='$mem_lvl',mem_status='$mem_status' where mem_id='$mem_id'")or die("Query 2 is inncorrect..........");
+//update (edit) query
+mysqli_query($con,"update member set mem_fname='$mem_fname', mem_lname='$mem_lname',mem_dob='$mem_dob', mem_lvl='$mem_lvl',mem_status='$mem_status' where mem_id='$mem_id'")or die("Query 2 is inncorrect");
 
 header("location: managemem.php");
 mysqli_close($con);
@@ -76,8 +76,6 @@ include "topheader.php";
                     </div>
 
 
-
-
               </div>
               <div class="card-footer">
                 <button type="submit" id="btn_save" name="btn_save" class="btn btn-fill btn-primary">Update</button>
@@ -85,7 +83,6 @@ include "topheader.php";
               </form>
             </div>
           </div>
-
 
         </div>
       </div>
