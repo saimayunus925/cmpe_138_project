@@ -1,4 +1,5 @@
- <?php
+ <!--SJSU CMPE 138 Fall 2020 TEAM8-->
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
@@ -12,7 +13,7 @@ if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
 $mem_id=$_GET['mem_id'];
 
-/*this is delet query*/
+/*this is delete query*/
 mysqli_query($con,"delete from member where mem_id='$mem_id'")or die("query is incorrect...");
 }
 
@@ -50,7 +51,7 @@ include "topheader.php";
 	<a class=" btn btn-primary" href="addmember.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
-
+			//query to show member info along with employee first name
                         $result=mysqli_query($con,"select mem_id,mem_fname,mem_lname,attendance,user_cost,mem_dob,mem_lvl,mem_status,emp_fname from member,employee where emp_id=e_id Limit $page1,12")or die ("query 1 incorrect.....");
 
                         while(list($mem_id,$mem_fname,$mem_lname,$attendance,$user_cost,$mem_dob,$mem_lvl,$mem_status,$emp_fname)=mysqli_fetch_array($result))
