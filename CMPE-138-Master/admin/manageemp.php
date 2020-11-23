@@ -1,10 +1,9 @@
-
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
  <?php
-// We need to use sessions, so you should always start sessions using the below code.
 session_start();
 include "sidenav.php";
 include "topheader.php";
-// If the user is not logged in redirect to the login page...
+//If not logged in, go to login
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../emp-login.php');
 	exit;
@@ -14,11 +13,9 @@ error_reporting(0);
 if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
 $e_id=$_GET['e_id'];
-/*this is delet query*/
-mysqli_query($con,"delete from employee where e_id='$e_id'")or die("query is incorrect...");
+//delete e_id query
+mysqli_query($con,"delete from employee where e_id='$e_id'")or die("Query is incorrect");
 }
-
-///pagination
 
 $page=$_GET['page'];
 
@@ -80,7 +77,6 @@ $page1=($page*10)-10;
                   </a>
                 </li>
                  <?php
-//counting paging
 
                 $paging=mysqli_query($con,"select e_id,emp_username, emp_password,emp_fname,emp_lname,emp_phone,emp_position from employee");
                 $count=mysqli_num_rows($paging);
@@ -104,10 +100,7 @@ $page1=($page*10)-10;
               </ul>
             </nav>
 
-
-
           </div>
-
 
         </div>
       </div>
