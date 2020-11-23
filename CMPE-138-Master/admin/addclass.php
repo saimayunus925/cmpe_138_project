@@ -27,12 +27,12 @@ mysqli_close($con);
 $class_id = rand(1000,9999);
 ?>
      <!-- End Navbar -->
-     <div class="content">
+     <div class="content add-page-bkgd">
        <div class="container-fluid">
          <!-- your content here -->
          <div class="col-md-12">
-             <div class="card">
-               <div class="card-header card-header-primary">
+             <div class="card add-page-card-bkgd">
+               <div class="card-header card-header-info">
                  <h4 class="card-title">Add New Class</h4>
                  <p class="card-category">Complete Class Profile</p>
                </div>
@@ -69,7 +69,7 @@ $class_id = rand(1000,9999);
                     </div>
                   </div>
 
-                  <div class="row">                 
+                  <div class="row">
                     <div class="col-md-2">
                      <div class="form-group bmd-form-group">
                        <label class="bmd-label-floating">Trainer ID</label>
@@ -79,7 +79,7 @@ $class_id = rand(1000,9999);
                   </div>
 
                    </div>
-                   <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Complete Register</button>
+                   <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Add Class</button>
                    <div class="clearfix"></div>
                  </form>
                </div>
