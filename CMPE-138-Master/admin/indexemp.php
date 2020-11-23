@@ -44,7 +44,6 @@ include "topheader.php";
                  <br> <br>
                  <?php
 
-
                  $con = new PDO("mysql:host=localhost;dbname=gym_manage",'root','');
                  if(isset($_POST["submit"])) { //if submit was pressed
                  	$str = $_POST["search"];
@@ -77,7 +76,6 @@ include "topheader.php";
                          <td><?php echo $row->emp_phone;?></td>
                          <td><?php echo $row->emp_position;?></td>
                  			</tr>
-
                  		</table>
                    </div>
                  <?php
@@ -88,9 +86,7 @@ echo '<div style="font-size:17px;color:black;font-style:normal;">'."No employees
               }
             }
               }
-
                  ?>
-
                <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
              </div>
            </div>
