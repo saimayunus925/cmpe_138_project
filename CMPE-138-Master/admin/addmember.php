@@ -34,12 +34,12 @@ $mem_status = 1;
 $attendance = 0;
 ?>
      <!-- End Navbar -->
-     <div class="content">
+     <div class="content add-page-bkgd"> // blue-green page body bkgd
        <div class="container-fluid">
          <!-- your content here -->
          <div class="col-md-12">
-             <div class="card">
-               <div class="card-header card-header-primary">
+             <div class="card add-page-card-bkgd"> // light green bkgd for 'add member' widget
+               <div class="card-header card-header-info"> // 'info' Bootstrap header is blue-green
                  <h4 class="card-title">Add New Member</h4>
                  <p class="card-category">Complete Member Profile</p>
                </div>

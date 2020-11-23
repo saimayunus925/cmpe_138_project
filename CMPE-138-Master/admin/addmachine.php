@@ -32,12 +32,12 @@ $mach_status = 1;
 
 ?>
       <!-- End Navbar -->
-      <div class="content">
+      <div class="content add-page-bkgd"> // blue green bkgd for page body
         <div class="container-fluid">
           <!-- your content here -->
           <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
+              <div class="card add-page-card-bkgd"> // light green bkgd for 'add machine' widget
+                <div class="card-header card-header-info"> // 'info' Boostrap header is blue-green
                   <h4 class="card-title">Add Machine</h4>
                   <p class="card-category">Complete Machine Profile</p>
                 </div>

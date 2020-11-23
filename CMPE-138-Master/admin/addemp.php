@@ -42,7 +42,7 @@ $e_id = rand(1000,9999);
 
 ?>
      <!-- End Navbar -->
-     <div class="content add-page-bkgd"> // background for page body
+     <div class="content add-page-bkgd"> // blue-green background for page body
        <div class="container-fluid">
          <!-- your content here -->
          <div class="col-md-12">
