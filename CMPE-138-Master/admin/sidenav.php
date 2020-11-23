@@ -24,11 +24,7 @@
 <body class="dark-edition">
   <div class="wrapper ">
     <div class="sidebar" data-color="green" data-background-color="black" data-image="./assets/img/sjsu.jpg">
-      <!--
-      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-      Tip 2: you can also add an image using data-image tag
-  -->
       <!-- I changed the data color to green because it looked better with the sea foam green color scheme -->
       <div class="logo">
         <a class="simple-text logo-normal">
@@ -55,24 +51,6 @@
               <p>Classes</p>
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="addmember.php">
-              <i class="material-icons">person</i>
-              <p>Add Member</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="addemp.php">
-              <i class="material-icons">person</i>
-              <p>Add Employee</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="addproduct.php">
-              <i class="material-icons">add</i>
-              <p>Add Machines</p>
-            </a>
-          </li> -->
           <li class="nav-item ">
             <a class="nav-link" href="managemem.php">
               <i class="material-icons">person</i>
