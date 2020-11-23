@@ -49,7 +49,7 @@ include "topheader.php";
                  if(isset($_POST["submit"])) { //if submit was pressed
                  	$str = $_POST["search"];
                   if (!empty($str)){ //if something was typed and entered into the search text box
-                  //if entered string matches any of the data (besides passwords) in the employee table, select and display the entire row (besides password)
+                  //if entered string matches any of the data (besides emp_password and mng_id) in the employee table, select and display the entire row (besides emp_password and mng_id)
                  	$sth = $con->prepare("SELECT e_id,emp_username,emp_fname,emp_lname,emp_phone,emp_position FROM `employee` WHERE e_id = '$str' OR emp_username = '$str' OR emp_fname = '$str' OR emp_lname = '$str' OR emp_phone = '$str' OR emp_position = '$str'");
                  	$sth->setFetchMode(PDO:: FETCH_OBJ);
                  	$sth -> execute();
