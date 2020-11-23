@@ -1,8 +1,8 @@
+
  <?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 include "sidenav.php";
-include "searchemp.php";
 include "topheader.php";
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
@@ -14,7 +14,6 @@ error_reporting(0);
 if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
 $e_id=$_GET['e_id'];
-
 /*this is delet query*/
 mysqli_query($con,"delete from employee where e_id='$e_id'")or die("query is incorrect...");
 }
@@ -53,12 +52,10 @@ $page1=($page*10)-10;
                       <?php
 
                         $result=mysqli_query($con,"select e_id,emp_username,emp_fname,emp_lname,emp_phone,emp_position from employee Limit $page1,12")or die ("query 1 incorrect.....");
-
                         while(list($e_id,$emp_username,$emp_fname,$emp_lname,$emp_phone,$emp_position)=mysqli_fetch_array($result))
                         {
                         echo "<tr><td>$e_id</td><td>$emp_username</td><td>$emp_fname</td><td>$emp_lname</td><td>$emp_phone</td><td>$emp_position</td>
                         <td>
-
                         <a href='editemp.php?e_id=$e_id' type='button' rel='tooltip' title='' class='btn btn-info btn-link btn-sm' data-original-title='Edit Employee'>
                                 <i class='material-icons'>edit</i>
                               <div class='ripple-container'></div></a>
@@ -67,7 +64,7 @@ $page1=($page*10)-10;
                               <div class='ripple-container'></div></a>
                         </td></tr>";
                         }
-
+                        include "searchemp.php";
                         ?>
                     </tbody>
                   </table>
@@ -115,5 +112,6 @@ $page1=($page*10)-10;
         </div>
       </div>
       <?php
+
 include "footer.php";
 ?>
