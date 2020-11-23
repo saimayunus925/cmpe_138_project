@@ -1,4 +1,4 @@
-
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
      <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
