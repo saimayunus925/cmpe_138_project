@@ -1,7 +1,7 @@
 <!--SJSU CMPE 138 Fall 2020 TEAM8-->
 <?php
 
-//connection info
+//connection info 
 $servername = "localhost";
 $username = "root";
 $password = "";
