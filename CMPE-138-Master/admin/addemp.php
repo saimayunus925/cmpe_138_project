@@ -1,9 +1,7 @@
-//new
-//addemp.php with hashing
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
 <?php
-// We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+//If not logged in, go to login
 if (!isset($_SESSION['loggedin'])) {
  header('Location: ../emp-login.php');
  exit;
@@ -15,36 +13,23 @@ if(isset($_POST['btn_save']))
 {
 $e_id=$_POST['e_id'];
 $emp_username=$_POST['emp_username'];
-$emp_password=$_POST['emp_password'];
-//changed
-$emp_pass= password_hash($emp_password, PASSWORD_DEFAULT);
-//$password_hash = password_hash($emp_password, PASSWORD_DEFAULT);
-//var_dump($password_hash); //outputs the hash
-
-//
+$emp_password=$_POST['emp_password']; //get password
+$emp_pass= password_hash($emp_password, PASSWORD_DEFAULT); //password_hash function to hash the password
 $emp_lname=$_POST['emp_lname'];
 $emp_fname=$_POST['emp_fname'];
 $emp_position=$_POST['emp_position'];
 $emp_phone=$_POST['emp_phone'];
-//changed
-//$password_string = "ena123";
-//$password_hash = "$2y$10$BeYiSPO4K944TJONdnrQK.nAtNvwMaDZrAC9VefNXBT5cDunATttG";
-                                         //changed from emp_password                                                               //changed from $emp_password
+//insert data into employee table
 mysqli_query($con,"insert into employee(e_id, emp_username, emp_password, emp_lname,emp_fname,emp_position,emp_phone) values ('$e_id','$emp_username','$emp_pass','$emp_lname','$emp_fname','$emp_position','$emp_phone')")
-     or die ("Query 1 is incorrect........");
-header("location: manageemp.php");
+     or die ("Query 1 is incorrect");
 mysqli_close($con);
 }
-//added
-//$values = [':emp_password' => $password_hash];
-
 $e_id = rand(1000,9999);
 
 ?>
      <!-- End Navbar -->
      <div class="content add-page-bkgd">
        <div class="container-fluid">
-         <!-- your content here -->
          <div class="col-md-12">
              <div class="card add-page-card-bkgd">
                <div class="card-header card-header-info">
