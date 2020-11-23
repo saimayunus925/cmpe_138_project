@@ -1,45 +1,40 @@
-//new
-//authenticate.php
+<!SJSU CMPE 138 Fall 2020 TEAM8>
 <?php
 session_start();
-// Change this to your connection info.
+// Connection info:
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'gym_manage';
-// Try and connect using the info above.
+//Connecting/check
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
-	// If there is an error with the connection, stop the script and display the error.
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-// Now we check if the data from the login form was submitted, isset() will check if the data exists.
+//check that both username and password have been inputted
 if ( !isset($_POST['username'], $_POST['password']) ) {
-	// Could not get the data that should have been sent.
 	exit('Please fill both the username and password fields!');
 }
 
-// Prepare our SQL, preparing the SQL statement will prevent SQL injection.
+//Prepare SQL to prevent SQL injection
 if ($stmt = $con->prepare('SELECT e_id, emp_password FROM employee WHERE emp_username = ?')) {
-	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
+	//Bind parameters
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
-	// Store the result so we can check if the account exists in the database.
+	//Store input to check if the account exists in the db
 	$stmt->store_result();
 if ($stmt->num_rows > 0) {
 	$stmt->bind_result($e_id, $emp_password);
 	$stmt->fetch();
-	// Account exists, now we verify the password.
-	// Note: remember to use password_hash in your registration file to store the hashed passwords.
+	//Account exists, now check the password
 	if (password_verify($_POST['password'], $emp_password)) {
-		// Verification success! User has loggedin!
-		// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
+		//Password verified, create sessions for logged in user
 		session_regenerate_id();
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $e_id;
-		header("Location: admin/index.php"); // Redirecting To Home Page
+		header("Location: admin/members.php");
 	} else {
 		echo "<script>
 			alert('Incorrect username or password');
@@ -56,3 +51,4 @@ if ($stmt->num_rows > 0) {
 	$stmt->close();
 }
 ?>
+
