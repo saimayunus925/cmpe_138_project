@@ -6,7 +6,7 @@ $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'gym_manage';
-//Connecting/check
+//Connecting check
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
@@ -27,7 +27,9 @@ if ($stmt = $con->prepare('SELECT e_id, emp_password FROM employee WHERE emp_use
 if ($stmt->num_rows > 0) {
 	$stmt->bind_result($e_id, $emp_password);
 	$stmt->fetch();
+	
 	//Account exists, now check the password
+	//Uses password_verify to verify hashed passwords with input
 	if (password_verify($_POST['password'], $emp_password)) {
 		//Password verified, create sessions for logged in user
 		session_regenerate_id();
