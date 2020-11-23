@@ -51,8 +51,9 @@ include "topheader.php";
                 <div class="table-responsive ps">
                   <table class="table table-hover tablesorter " id="page1">
                     <thead class=" text-primary">
-                      <tr><th>Class ID</th><th>Class Name</th><th>Class Time</th><th>Duration</th><th>Trainer</th>
-                    </tr></thead>
+                      <tr><th>Class ID</th><th>Class Name</th><th>Class Time</th><th>Duration</th><th>Trainer</th><th>
+                        <a class=" btn btn-primary" href="addclass.php">Add New</a></th></tr></thead>
+                  </thead>
                     <tbody>
                       <?php
                         $result=mysqli_query($con,"select class_id, class_name, class_time,c_duration, emp_fname from class, employee where emp_trainer=e_id Limit $page1,12")or die ("query 1 incorrect.....");
@@ -60,12 +61,20 @@ include "topheader.php";
                         while(list($class_id,$class_name,$class_time,$c_duration,$emp_fname)=mysqli_fetch_array($result))
                         {
                         echo "<tr><td>$class_id</td><td>$class_name</td><td>$class_time</td><td>$c_duration hour(s)</td><td>$emp_fname</td>
-
                         <td>
-                        <a class=' btn btn-danger' href='classes.php?class_id=$class_id&action=delete'>Delete Class</a>
-                        </td></tr>";
-                        }
 
+                        <a href='classes.php?class_id=$class_id&action=delete' type='button' rel='tooltip' title='' class='btn btn-danger btn-link btn-sm' data-original-title='Delete Class'>
+                          <i class='material-icons'>close</i>
+                          <div class='ripple-container'></div>
+                        </a>
+
+                        <a href='editclass.php?class_id=$class_id' type='button' rel='tooltip' title='' class='btn btn-info btn-link btn-sm' data-original-title='Edit Class'>
+                          <i class='material-icons'>edit</i>
+                          <div class='ripple-container'></div>
+                        </a>
+                        </td></tr>";
+
+                        }
                         ?>
                     </tbody>
                   </table>
