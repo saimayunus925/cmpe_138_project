@@ -1,3 +1,4 @@
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
  <?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
@@ -12,7 +13,7 @@ if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
 $mach_id=$_GET['mach_id'];
 
-/*this is delet query*/
+/*this is delete query*/
 mysqli_query($con,"delete from equipment where mach_id='$mach_id'")or die("query is incorrect...");
 }
 
@@ -50,7 +51,7 @@ include "topheader.php";
 	<a class=" btn btn-primary" href="addmachine.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
-
+			// query to show machine information
                         $result=mysqli_query($con,"select mach_id,mach_name,mach_type,use_time,use_count,start_date,mach_status from equipment Limit $page1,12")or die ("query 1 incorrect.....");
 
                         while(list($mach_id,$mach_name,$mach_type,$use_time,$use_count,$start_date,$mach_status)=mysqli_fetch_array($result))
