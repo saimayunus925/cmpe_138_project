@@ -15,14 +15,14 @@ if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='sign_out')
 {
 $mem_id=$_GET['mem_id'];
 
-/*this is update query*/
+/*this is update query to change member status from 1 to 0*/
 mysqli_query($con,"update member set mem_status=0 where mem_id='$mem_id'")or die("update query is incorrect...");
 }
 if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='sign_in')
 {
 $mem_id=$_GET['mem_id'];
 
-/*this is update query*/
+/*this is update query to change member status from 0 to 1*/
 mysqli_query($con,"update member set mem_status=1 where mem_id='$mem_id'")or die("update query is incorrect...");
 }
 
@@ -57,6 +57,7 @@ include "topheader.php";
                     </tr></thead>
                     <tbody>
                       <?php
+			//query to show member info whose status = 1
                         $result=mysqli_query($con,"select mem_id, mem_fname, mem_lname, mem_lvl from member where mem_status=1")or die ("query 1 incorrect.....");
 
                         while(list($mem_id,$mem_fname,$mem_lname,$mem_lvl)=mysqli_fetch_array($result))
@@ -67,6 +68,7 @@ include "topheader.php";
                         <a class=' btn btn-danger' href='members.php?mem_id=$mem_id&action=sign_out'>Sign Out</a>
                         </td></tr>";
                         }
+			//query to show member info whose status = 0
                         $result=mysqli_query($con,"select mem_id, mem_fname, mem_lname, mem_lvl from member where mem_status=0")or die ("query 1 incorrect.....");
 
                         while(list($mem_id,$mem_fname,$mem_lname,$mem_lvl)=mysqli_fetch_array($result))
@@ -94,7 +96,7 @@ include "topheader.php";
                   </a>
                 </li>
                  <?php
-//counting paging
+		//counting paging
 
                 $paging=mysqli_query($con,"select mem_id, mem_fname, mem_lname, mem_lvl from member");
                 $count=mysqli_num_rows($paging);
