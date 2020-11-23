@@ -6,7 +6,7 @@
   <!--button to lead to indexemp.php (search employees)-->
 <form method="post" action="indexemp.php">
 <label>Search</label>
-<input type="submit" name="submit" value="Search Employees">
+<input type="submit" name="submit" value="Search Employees" class=" btn btn-primary">
 </object>
 </form>
 </body>
