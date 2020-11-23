@@ -36,7 +36,7 @@ include "topheader.php";
                  <form method="post">
                  <label>Search</label>
                  <input type="text" name="search">
-                 <input type="submit" name="submit">
+                 <input type="submit" name="submit" class=" btn btn-primary">
                  </object>
                  </form>
                  </body>
