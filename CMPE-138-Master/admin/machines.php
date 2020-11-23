@@ -1,4 +1,5 @@
- <?php
+ <!--SJSU CMPE 138 Fall 2020 TEAM8-->
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
@@ -13,7 +14,7 @@ if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='update')
 {
 $mach_id=$_GET['mach_id'];
 
-/*this is delet query*/
+/*this is update query to change machine status from 0 to 1*/
 mysqli_query($con,"update equipment set mach_status=1 where mach_id='$mach_id'")or die("update query is incorrect...");
 }
 
@@ -48,6 +49,7 @@ include "topheader.php";
                     </tr></thead>
                     <tbody>
                       <?php
+			//query to show machine information and the last member to use it 
                         $result=mysqli_query($con,"select mach_id, mach_name, mach_type,mem_fname,mem_lname from equipment inner join member where last_used=mem_id and mach_status=0  Limit $page1,12")or die ("query 1 incorrect.....");
 
                         while(list($mach_id,$mach_name,$mach_type,$mem_fname,$mem_lname)=mysqli_fetch_array($result))
