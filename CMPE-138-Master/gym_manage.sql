@@ -1,3 +1,4 @@
+--<!--SJSU CMPE 138 Fall 2020 TEAM8-->
 -- phpMyAdmin SQL Dump
 -- version 5.0.1
 -- https://www.phpmyadmin.net/
