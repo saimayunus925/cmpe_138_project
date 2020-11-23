@@ -104,7 +104,7 @@ $e_id = rand(1000,9999);
                    </div>
 
 
-                   <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Complete Register</button>
+                   <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Add Employee</button>
                    <div class="clearfix"></div>
                  </form>
                </div>

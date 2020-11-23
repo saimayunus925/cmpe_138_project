@@ -136,7 +136,7 @@ $attendance = 0;
                      </div> -->
                    </div>
 
-                   <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Complete Register</button>
+                   <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Add Member</button>
                    <div class="clearfix"></div>
                  </form>
                </div>
