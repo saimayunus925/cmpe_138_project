@@ -47,7 +47,7 @@ $page1=($page*10)-10;
 	<a class=" btn btn-primary" href="addemp.php">Add New</a></th></tr></thead>
                     <tbody>
                       <?php
-
+			//query to show employee info
                         $result=mysqli_query($con,"select e_id,emp_username,emp_fname,emp_lname,emp_phone,emp_position from employee Limit $page1,12")or die ("query 1 incorrect.....");
                         while(list($e_id,$emp_username,$emp_fname,$emp_lname,$emp_phone,$emp_position)=mysqli_fetch_array($result))
                         {
