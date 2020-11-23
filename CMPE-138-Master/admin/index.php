@@ -49,17 +49,18 @@ include "topheader.php";
                  <br> <br>
                  <?php
 
-                 $con = new PDO("mysql:host=localhost;dbname=gym_manage",'root','');
-                 $found;
-                 if (isset($_POST["submit"])) {
-                 	$str = $_POST["search"];
-                 	$sth = $con->prepare("SELECT e_id,emp_username,emp_fname,emp_lname,emp_phone,emp_position FROM `employee` WHERE e_id = '$str' OR emp_username = '$str' OR emp_fname = '$str' OR emp_lname = '$str' OR emp_phone = '$str' OR emp_position = '$str'");
 
+                 $con = new PDO("mysql:host=localhost;dbname=gym_manage",'root','');
+                 if(isset($_POST["submit"])) {
+                 	$str = $_POST["search"];
+                  if (!empty($str)){
+                 	$sth = $con->prepare("SELECT e_id,emp_username,emp_fname,emp_lname,emp_phone,emp_position FROM `employee` WHERE e_id = '$str' OR emp_username = '$str' OR emp_fname = '$str' OR emp_lname = '$str' OR emp_phone = '$str' OR emp_position = '$str'");
                  	$sth->setFetchMode(PDO:: FETCH_OBJ);
                  	$sth -> execute();
+                  $count = $sth -> rowCount();
+                  if($count >= 1){
                  	while($row = $sth->fetch())
                  	{
-                     $found = '1';
                  		?>
                      <div style="Color:black">
                  		<table>
@@ -84,12 +85,13 @@ include "topheader.php";
                    </div>
                  <?php
                  	}
-                   if($found == '0'){
-                       echo '<i style="color:black; font-size:18px; font-style: normal;">
-                       Employee does not exist. </i> ';
-                     }
+              }
+              if($count < 1){
+echo '<div style="font-size:17px;color:black;font-style:normal;">'."No employees match your search.".'</span></div>';
+              }
+            }
+              }
 
-                 }
 
                  ?>
 
