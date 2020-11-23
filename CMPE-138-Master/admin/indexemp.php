@@ -1,13 +1,12 @@
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
 <?php
-// We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+//If not logged in, go to login
 if (!isset($_SESSION['loggedin'])) {
  header('Location: ../emp-login.php');
  exit;
 }
 include("../db.php");
-
 error_reporting(0);
 
 include "sidenav.php";
@@ -16,7 +15,6 @@ include "topheader.php";
      <!-- End Navbar -->
      <div class="content">
        <div class="container-fluid">
-         <!-- your content here -->
          <div class="col-md-14">
            <div class="card ">
              <div class="card-header card-header-primary">
@@ -26,14 +24,11 @@ include "topheader.php";
                <div class="table-responsive ps">
                  <table class="table table-hover tablesorter " id="page1">
                    <div class="row">
-
                    </div>
-
                    <tbody>
-
-
                    </tbody>
                  </table>
+                 <!--search text box and submit button-->
                  <!DOCTYPE html>
                  <html>
                  <body>
@@ -51,16 +46,18 @@ include "topheader.php";
 
 
                  $con = new PDO("mysql:host=localhost;dbname=gym_manage",'root','');
-                 if(isset($_POST["submit"])) {
+                 if(isset($_POST["submit"])) { //if submit was pressed
                  	$str = $_POST["search"];
-                  if (!empty($str)){
+                  if (!empty($str)){ //if something was typed and entered into the search text box
+                  //if entered string matches any of the data (besides passwords) in the employee table, select and display the entire row (besides password)
                  	$sth = $con->prepare("SELECT e_id,emp_username,emp_fname,emp_lname,emp_phone,emp_position FROM `employee` WHERE e_id = '$str' OR emp_username = '$str' OR emp_fname = '$str' OR emp_lname = '$str' OR emp_phone = '$str' OR emp_position = '$str'");
                  	$sth->setFetchMode(PDO:: FETCH_OBJ);
                  	$sth -> execute();
                   $count = $sth -> rowCount();
-                  if($count >= 1){
+                  if($count >= 1){ //if at least one row is returned
                  	while($row = $sth->fetch())
                  	{
+                    //table to output results
                  		?>
                      <div style="Color:black">
                  		<table>
@@ -86,12 +83,11 @@ include "topheader.php";
                  <?php
                  	}
               }
-              if($count < 1){
+              if($count < 1){ //if no rows are returned, then the search did not match anything in the employee table
 echo '<div style="font-size:17px;color:black;font-style:normal;">'."No employees match your search.".'</span></div>';
               }
             }
               }
-
 
                  ?>
 
