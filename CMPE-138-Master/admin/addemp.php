@@ -42,12 +42,12 @@ $e_id = rand(1000,9999);
 
 ?>
      <!-- End Navbar -->
-     <div class="content">
+     <div class="content add-page-bkgd"> // background for page body
        <div class="container-fluid">
          <!-- your content here -->
          <div class="col-md-12">
-             <div class="card">
-               <div class="card-header card-header-primary">
+             <div class="card add-page-card-bkgd"> // light green background for 'add employee' widget
+               <div class="card-header card-header-info"> // 'info' Bootstrap header is blue-green, so I picked that
                  <h4 class="card-title">Add Employee</h4>
                  <p class="card-category">Complete Employee Profile</p>
                </div>

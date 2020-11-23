@@ -15,17 +15,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="assets/js/search.js"></script>
+  <!-- custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style2.css">
 
 </head>
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sjsu.jpg">
+    <div class="sidebar" data-color="green" data-background-color="black" data-image="./assets/img/sjsu.jpg">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
       Tip 2: you can also add an image using data-image tag
   -->
+      <!-- I changed the data color to green because it looked better with the sea foam green color scheme -->
       <div class="logo">
         <a class="simple-text logo-normal">
           CMPE 138 GROUP 8
