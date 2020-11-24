@@ -2,7 +2,7 @@
 <?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+// If the user is not logged in redirect to the login page
 if (!isset($_SESSION['loggedin'])){
  header('Location: ../emp-login.php');
  exit;
@@ -38,6 +38,7 @@ $class_id = rand(1000,9999);
                  <p class="card-category">Complete Class Profile</p>
                </div>
 
+              <!-- Edit classs table info -->
                <div class="card-body">
                  <form action="" method="post" name="form" enctype="multipart/form-data">
                    <div class="row">
