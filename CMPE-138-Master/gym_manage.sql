@@ -55,19 +55,40 @@ INSERT INTO `class` (`class_id`, `class_name`, `class_time`, `c_duration`, `emp_
 --
 
 CREATE TABLE `employee` (
-  `e_id` int(4) NOT NULL,
-  `emp_username` varchar(100) NOT NULL,
-  `emp_password` varchar(256) NOT NULL,
-  `emp_lname` varchar(100) NOT NULL,
-  `emp_fname` varchar(100) NOT NULL,
-  `mng_id` int(11) DEFAULT NULL,
-  `emp_position` varchar(100) NOT NULL,
-  `emp_phone` varchar(12) NOT NULL
+  `e_id` int(4) NOT NULL,                -- unique employee ID, used for all foreign keys
+  `emp_username` varchar(100) NOT NULL,  -- employee username
+  `emp_password` varchar(256) NOT NULL,  -- employee password (stored as hash values, encapsulated in DB)
+  `emp_lname` varchar(100) NOT NULL,     -- Last Name
+  `emp_fname` varchar(100) NOT NULL,     -- First Name
+  `mng_id` int(11) DEFAULT NULL,         -- Manager ID (used as auth code for any managerial duties or file accesses)
+  `emp_position` varchar(100) NOT NULL,  -- stores position of employee
+  `emp_phone` varchar(12) NOT NULL       -- employee phone records
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
+
+/* PRE-HASH EMPLOYEE DATA, THIS IS ONLY HERE IN CASE WE FORGET PASSWORDS WHILE DEVELOPPING
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (2095, 'dr4ke', 'Velarde', 'Arian Joy', 1999, 'Manager', '8943318188');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (1652, 'k4ny3west', 'Yunus', 'Saima', 2000, 'Manager', '9558258297');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (7440, 'b1gsean', 'Eappen', 'Brian', NULL, 'Trainer', '3953396331');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (2241, 'g-eazy', 'Kaur', 'Aman', NULL, 'Mechanic', '4633066745');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (3777, 'juicewrld999', 'Na', 'Elizabeth', NULL, 'Front Desk', '7673558856');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (2531, 'lilwayne666', 'Douglas', 'Frederick', NULL, 'Custodian', '9234657975');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (1811, 'kobe0824', 'Durham', 'Linda', NULL, 'Front Desk', '5386901638');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (5291, 'notJCole2014', 'Cole', 'Jermaine', NULL, 'Trainer', '1147332468');
+INSERT INTO `employee` (`e_id`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`)
+VALUES (1403, 'whatspoopin', 'Harlow', 'Jack', NULL, 'Custodian', '3758208417');
+*/
 
 INSERT INTO `employee` (`e_id`, `emp_username`, `emp_password`, `emp_lname`, `emp_fname`, `mng_id`, `emp_position`, `emp_phone`) VALUES
 (1403, 'jharlow', '$2y$10$OAAfBNphXSRFsSVm2BJ2v..69GBSMmG8J6JW.O6PS/it2fOFIonS2', 'Harlow', 'Jack', NULL, 'Custodian', '3758208417'),
@@ -91,14 +112,14 @@ INSERT INTO `employee` (`e_id`, `emp_username`, `emp_password`, `emp_lname`, `em
 --
 
 CREATE TABLE `equipment` (
-  `mach_id` int(11) NOT NULL,
-  `mach_name` varchar(100) NOT NULL,
-  `mach_type` varchar(100) NOT NULL,
-  `use_time` int(11) NOT NULL,
+  `mach_id` int(11) NOT NULL,            -- unique machine identification number
+  `mach_name` varchar(100) NOT NULL,     -- machine model name (useful for ordering new machines)
+  `mach_type` varchar(100) NOT NULL,     -- machine type, useful to help employees identify (treadmill etc)
+  `use_time` int(11) NOT NULL,           -- use time in minutes
   `use_count` int(11) NOT NULL,
-  `start_date` varchar(100) NOT NULL,
-  `mach_status` tinyint(1) DEFAULT NULL,
-  `last_used` int(4) DEFAULT NULL
+  `start_date` varchar(100) NOT NULL,    -- date machine was brought into gym
+  `mach_status` tinyint(1) DEFAULT NULL, -- if machine is currently in use
+  `last_used` int(4) DEFAULT NULL.       -- last Member to use machine
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
