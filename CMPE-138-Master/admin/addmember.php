@@ -1,7 +1,8 @@
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
 <?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+// If the user is not logged in redirect to the login page
 if (!isset($_SESSION['loggedin'])){
  header('Location: ../emp-login.php');
  exit;
@@ -128,12 +129,6 @@ $attendance = 0;
                          <input type="text" name="attendance" id="attendance" style="color: white" value ="<?php echo "$attendance";?>"class="form-control" readonly>
                        </div>
                      </div>
-<!--                      <div class="col-sm-1">
-                       <div class="form-group bmd-form-group">
-                         <label class="bmd-label-floating">Employee ID</label>
-                         <input type="text" name="emp_id" id="emp_id" style="color: white" value ="<?php echo "$emp_id";?>"class="form-control" readonly>
-                       </div>
-                     </div> -->
                    </div>
 
                    <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Add Member</button>
