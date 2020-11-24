@@ -1,7 +1,8 @@
- <?php
+<!--SJSU CMPE 138 Fall 2020 TEAM8--> 
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+// If the user is not logged in redirect to the login page
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../emp-login.php');
 	exit;
@@ -66,10 +67,6 @@ include "topheader.php";
                         <input type="text" id="emp_trainer" name="emp_trainer"  class="form-control" value="<?php echo $emp_trainer; ?>" >
                       </div>
                     </div>
-
-
-
-
               </div>
               <div class="card-footer">
                 <button type="submit" id="btn_save" name="btn_save" class="btn btn-fill btn-primary">Update</button>
@@ -77,8 +74,6 @@ include "topheader.php";
               </form>
             </div>
           </div>
-
-
         </div>
       </div>
       <?php
