@@ -1,5 +1,4 @@
 <!--SJSU CMPE 138 Fall 2020 TEAM8-->
-
 <?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
@@ -20,12 +19,15 @@ if(isset($_POST['btn_save']))
 
 $emp_username=$_POST['emp_username'];
 $emp_password=$_POST['emp_password'];
+$emp_pass= password_hash($emp_password, PASSWORD_DEFAULT); //password_hash function to hash the password
 $emp_fname=$_POST['emp_fname'];
 $emp_lname=$_POST['emp_lname'];
 $emp_phone=$_POST['emp_phone'];
 $emp_position=$_POST['emp_position'];
 
-mysqli_query($con,"update employee set emp_username='$emp_username', emp_password='$emp_password',emp_fname='$emp_fname',emp_lname='$emp_lname',emp_phone='$emp_phone',emp_position='$emp_position' where e_id='$e_id'")or die("Query 2 is inncorrect..........");
+
+
+mysqli_query($con,"update employee set emp_username='$emp_username', emp_password='$emp_pass',emp_fname='$emp_fname',emp_lname='$emp_lname',emp_phone='$emp_phone',emp_position='$emp_position' where e_id='$e_id'")or die("Query 2 is inncorrect..........");
 
 header("location: manageemp.php");
 mysqli_close($con);
