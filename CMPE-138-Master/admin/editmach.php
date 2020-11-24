@@ -1,4 +1,6 @@
- <?php
+ 
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
