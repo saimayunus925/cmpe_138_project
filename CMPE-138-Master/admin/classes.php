@@ -1,7 +1,8 @@
- <?php
+<!--SJSU CMPE 138 Fall 2020 TEAM8-->
+<?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+// If the user is not logged in redirect to the login page
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../emp-login.php');
 	exit;
@@ -91,7 +92,6 @@ include "topheader.php";
                   </a>
                 </li>
                  <?php
-//counting paging
 
                 $paging=mysqli_query($con,"select class_id, class_name, class_time, emp_trainer from class");
                 $count=mysqli_num_rows($paging);
