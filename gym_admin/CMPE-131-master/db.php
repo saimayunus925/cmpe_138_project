@@ -1,4 +1,4 @@
-// SJSU CMPE 138 Fall 2020 TEAM8
+
 <?php
 
 $servername = "localhost";
