@@ -1,0 +1,18 @@
+
+.add-page-card-bkgd {
+    background-color: #d5f9de !important;
+}
+
+.add-page-bkgd, .sidenav_bkgd {
+    background-color: #049a8f !important;
+}
+
+.nav_item > .active {
+    background-color: #037971 !important;
+}
+
+.add-page-banner-bkgd {
+    background-color: #02473a !important;
+} 
+
+

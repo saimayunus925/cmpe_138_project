@@ -1,0 +1,31 @@
+
+/* CSS styling for customer pages */
+
+body {
+    background-color: #d5f9de;
+}
+
+nav {
+    background-color: #6DCAB7;
+}
+
+.navbar a:link {
+    font-size: 20px;
+    font-weight: 700;
+    color: #02473A;
+}
+
+.navbar a:visited {
+    font-size: 20px;
+    font-weight: 700;
+    color: #037971;
+}
+
+input[type=text] {
+    background-color: #C3E9E2;
+}
+
+input[type=password] {
+    background-color: #C3E9E2;
+}
+

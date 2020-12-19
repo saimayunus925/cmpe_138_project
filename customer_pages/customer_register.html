@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- CSS stylesheet for customer page -->
+    <link rel="stylesheet" href="./style1.css" type="text/css">
+</head>
+<body>
+    <!-- navigation bar will go here -->
+    <nav class="navbar"> 
+        <button class="btn btn-link">
+            <a href="./welcome.html">HOME</a>
+        </button>
+        <button class="btn btn-link">
+            <a href="#">GET MEMBERSHIP</a>
+        </button>
+        <button class="btn btn-link">
+            <a href="./customer_login.html">SIGN IN</a>
+        </button>
+        <button class="btn btn-link">
+            <a href="./customer_register.html">SIGN UP</a>
+        </button> 
+        <button class="btn btn-link">
+            <a href="../admin_pages/admin_homepage.html">ADMIN MODE</a>
+        </button>
+    </nav>
+    
+    <!-- the page is not done yet, this is a basic register form -->
+    <h5>SIGN UP</h5>
+    <form action="" method="post">
+        <!-- user ID -->
+        <div>
+            <label for="user_id_register">User ID: </label>
+            <input type="text" name="user_id_register" id="user_id_register" required>
+        </div>
+        <!-- password -->
+        <div>
+            <label for="user_password_register">Password: </label>
+            <input type="password" name="user_password_register" id="user_password_register" required>
+        </div>
+        <!-- "login" button -->
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</body>
+</html>
